@@ -4,7 +4,10 @@
   "description": "A todo-list, part of the Odin Project curriculum",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "gitHubPagesConfig": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "Nabil Negadi",
   "license": "ISC",
