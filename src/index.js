@@ -1,13 +1,19 @@
-// import { Todo } from "./todo";
-// import { Project } from "./project";
+import { Todo } from "./todo";
+import { categories } from "./categories";
 
-const test = document.createElement('h1');
+const newNote = new Todo;
 
-test.textContent = 'Now we are talking!';
+newNote.title = 'New note';
+newNote.category = 'default';
+newNote.complete = false;
+newNote.description = 'A very important thing to do';
+newNote.dueDate = '21/02/2024';
+newNote.priority = 'Urgent';
 
-document.body.prepend(test);
 
-console.log('hello!!!');
+newNote.updateCategory();
+
+console.log(categories)
 
 
 
