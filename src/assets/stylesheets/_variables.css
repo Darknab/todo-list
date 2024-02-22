@@ -1,0 +1,45 @@
+:root {
+  /* Fonts */
+  --font-family-primary: system-ui, sans-serif;
+
+  /* Line heights */
+  --line-height-headers: 1.1;
+  --line-height-body: 1.5;
+  --line-height-cards: 0.9;
+
+  /* Font sizes */
+  --font-size-100: 0.75rem;  
+  --font-size-200: 0.875rem;  
+  --font-size-400: 1rem;      
+  --font-size-500: 1.125rem;
+  --font-size-600: 1.25rem;
+  --font-size-700: 1.5rem;
+  --font-size-800: 2rem; 
+  --font-size-900: 2.5rem;
+
+  /* text colors */
+  --color-text-primary: #041925;
+  --color-text-primary-light: #ECF7FD;
+  --color-text-secondary: #E0C227 ;
+
+    /* Spacing */
+    --space-100: 0.25rem;
+    --space-200: 0.375rem;
+    --space-300: 0.5rem;
+    --space-400: 0.75rem;
+    --space-500: 1rem;
+    --space-600: 1.5rem;
+    --space-700: 2rem;
+    --space-750:2.5rem;
+    --space-800: 3rem;
+    --space-900: 4rem;
+
+    /* colours */
+    --color-navigation: #2CA8D3;
+    --color-task: #FBFEFB;
+    --color-secondary: #71F79F;
+    --color-shadow: rgba(74,74,74,0.3);
+
+    /* shadow */
+    --shadow: 5px 5px 40px 5px var(--color-shadow);
+}
