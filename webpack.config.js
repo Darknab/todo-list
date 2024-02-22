@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [new HtmlWebpackPlugin({
-    title: 'Todo app',
+    template: './src/template.html',
     }),
  ],
   devtool: 'inline-source-map',
