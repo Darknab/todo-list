@@ -1,3 +1,5 @@
+import '/src/assets/stylesheets/style.css';
+
 import { Todo } from "./todo";
 import { categories } from "./categories";
 
