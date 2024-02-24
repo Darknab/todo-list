@@ -7,3 +7,19 @@
   color: var(--color-text-primary-light);
   text-align: center;
 }
+
+.task-description {
+  max-height: 50px;
+  transition: max-height 0.5s ease;
+  overflow: hidden;
+}
+
+.closed {
+  max-height: 0;
+}
+
+.task-element {
+  border: 1px solid red;
+}
+
+

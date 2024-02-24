@@ -9,10 +9,23 @@ function addElement(task) {
   taskTitle.textContent = task.title;
   const taskDueDate = document.createElement('span');
   taskDueDate.textContent = task.dueDate;
+  const taskDescription = document.createElement('p');
+  taskDescription.classList.add('task-description', 'closed');
+  taskDescription.textContent = task.description;
 
-  element.append(taskTitle, taskDueDate);
+  element.append(taskTitle, taskDueDate, taskDescription);
   tasks.append(element);
 }
+
+function activateAccordeon() {
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('task-element')) {
+      const description = e.target.querySelector('.task-description');
+      description.classList.toggle('closed');
+    }
+  })
+}
+
 
 export function displayTasks() {
   document.addEventListener('click', (e) => {
@@ -32,4 +45,5 @@ export function displayTasks() {
       }
     }
   })
+  activateAccordeon();
 }
