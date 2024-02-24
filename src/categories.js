@@ -1,3 +1,5 @@
 export const categories = {
-  default: [],
+  'default': [],
+  'work': [],
+  'hobbies': [],
 }
