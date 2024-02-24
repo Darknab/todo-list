@@ -2,6 +2,17 @@ import { categories } from "./categories";
 
 const tasks = document.querySelector('.tasks');
 
+function createCheckBox(task) {
+  const box = document.createElement('input');
+  box.type = 'checkbox';
+
+  if (task.complete === true) {
+    box.checked = true;
+  }
+
+  return box;
+}
+
 function addElement(task) {
   const element = document.createElement('div');
   element.classList.add('task-element');
@@ -17,11 +28,13 @@ function addElement(task) {
   more.textContent = 'Show more';
   more.role = 'link';
   taskDueDate.textContent = task.dueDate;
+  const checkBox = createCheckBox(task);
+
   const taskDescription = document.createElement('p');
   taskDescription.classList.add('task-description', 'closed');
   taskDescription.textContent = task.description;
 
-  firstLine.append(taskTitle, taskDueDate, more)
+  firstLine.append(checkBox, taskTitle, taskDueDate, more)
   element.append(firstLine, taskDescription);
   tasks.append(element);
 }
