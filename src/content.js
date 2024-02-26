@@ -1,4 +1,6 @@
-import { categories } from "./categories";
+import { getCategories } from "./categories";
+
+const categories = getCategories();
 
 const tasks = document.querySelector('.tasks');
 

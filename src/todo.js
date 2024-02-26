@@ -1,4 +1,6 @@
-import { categories } from "./categories";
+import { getCategories } from "./categories";
+
+const categories = getCategories();
 
 class Todo {
   constructor (title, description, dueDate, priority, complete, category) {

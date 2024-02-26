@@ -1,9 +1,11 @@
 import '/src/assets/stylesheets/style.css';
 
 import { Todo } from "./todo";
-import { categories } from "./categories";
 import { displayCategories } from './nav';
 import { displayTasks } from './content';
+import { getCategories } from './categories';
+
+const categories = getCategories();
 
 const newNote = new Todo;
 
