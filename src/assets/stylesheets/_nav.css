@@ -2,3 +2,8 @@ nav {
   background-color: var(--color-primary);
   min-height: 100vh;
 }
+
+.hidden {
+  height: 0;
+  overflow: hidden;
+}
