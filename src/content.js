@@ -5,14 +5,30 @@ let categories = getCategories();
 const tasks = document.querySelector('.tasks');
 
 function createCheckBox(task) {
-  const box = document.createElement('input');
-  box.type = 'checkbox';
+  const box = document.createElement('button');
+  box.id = task.title;
 
   if (task.complete === true) {
-    box.checked = true;
-  }
+    box.textContent = String.fromCharCode(10004) + ' completed';
+    box.disabled = true;
+  } else box.textContent = 'Mark as complete';
 
+  // handleCheckBox(task);
   return box;
+}
+
+function handleCheckBox(task) {
+  document.addEventListener('click', (e) => {
+    if (e.target.id === task.title) {
+      task.complete = true;
+      e.target.textContent = String.fromCharCode(10004) + ' completed';
+      e.target.disabled = true;
+      e.target.parentNode.classList.add('complete')
+      console.log('disabled');
+      const updatedCategories = JSON.stringify(categories);
+      localStorage.setItem('categories', updatedCategories);
+    }
+  })
 }
 
 function addElement(task) {
@@ -37,6 +53,10 @@ function addElement(task) {
   taskDescription.textContent = task.description;
 
   firstLine.append(checkBox, taskTitle, taskDueDate, more)
+  if (task.complete === true) {
+    firstLine.classList.add('complete');
+  }
+  handleCheckBox(task);
   element.append(firstLine, taskDescription);
   tasks.append(element);
 }
@@ -60,10 +80,9 @@ function showMore() {
 }
 
 export function displayTasks() {
-  // Refresh data
-
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('category')) {
+      // refresh data
       categories = getCategories();
       tasks.textContent = '';
       const catName = e.target.textContent;
