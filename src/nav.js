@@ -1,6 +1,6 @@
 import { getCategories } from "./categories";
 
-const categories = getCategories();
+let categories = getCategories();
 
 const categoriesList = document.querySelector('.categories-list');
 
@@ -23,6 +23,7 @@ submitBtn.addEventListener('click', (e) => {
   toggleForm();
   input.value = '';
   toggleAddBtn();
+  displayCategories();
 });
 
 function toggleForm() {
@@ -41,6 +42,9 @@ addBtn.addEventListener('click', () => {
 })
 
 export function displayCategories() {
+  // Delete all previous content in case of a refresh and retrieve a fresh version on categories
+  categoriesList.innerHTML = '';
+  categories = getCategories();
   for (const category in categories) {
     displayElement(category);
   }
