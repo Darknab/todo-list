@@ -1,6 +1,6 @@
 import { getCategories } from "./categories";
 
-const categories = getCategories();
+let categories = getCategories();
 
 const tasks = document.querySelector('.tasks');
 
@@ -60,8 +60,11 @@ function showMore() {
 }
 
 export function displayTasks() {
+  // Refresh data
+
   document.addEventListener('click', (e) => {
     if (e.target.classList.contains('category')) {
+      categories = getCategories();
       tasks.textContent = '';
       const catName = e.target.textContent;
       const tasksList = categories[catName];
