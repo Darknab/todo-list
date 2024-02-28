@@ -20,7 +20,40 @@
   <div class="content">
     <h1>TaskTrek</h1>
     <p>Where Tasks Meet Efficiency</p>
-
+    <button id="add-task">Add task</button>
+    <dialog>
+      <h2>Add a new task</h2>
+      <form>
+        <div>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="30" rows="3" required></textarea>
+        </div>
+        <div>
+          <label for="select-category">Category</label>
+          <select name="select-category" id="select-category" required></select>
+        </div>
+        <div>
+          <label for="due-date"></label>
+          <input name="due-date" id="due-date" type="date" required>
+        </div>
+        <div>
+          <label for="priority">Priority</label>
+          <Select name="priority" id="priority" required>
+            <option value="high-priority">High priority</option>
+            <option value="important">Important</option>
+            <option value="less-important">Less important</option>
+            <option value="defer">Defer</option>
+          </Select>
+        </div>
+        <div>
+          <input type="submit" value="Create task" id="submit-task">
+        </div>
+      </form>
+    </dialog>
     <div class="tasks"></div>
   </div>
   
