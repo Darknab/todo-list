@@ -52,8 +52,8 @@ function createTask() {
   task.category = document.querySelector('#select-category').value;
   const date = document.querySelector('#due-date').value;
   const formattedDate = format(new Date(date), 'dd/MM/yyyy');
-  task.date = formattedDate;
-  task.priority = document.querySelector('#priority');
+  task.dueDate = formattedDate;
+  task.priority = document.querySelector('#priority').value;
   task.complete = false;
   return task;
 }
