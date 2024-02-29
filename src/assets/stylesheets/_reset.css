@@ -54,3 +54,9 @@ a {
 li {
   list-style-type: none;
 }
+
+button {
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}

@@ -1,3 +1,8 @@
+.nav-title {
+  margin-block: 2rem;
+  padding: 1rem;
+}
+
 nav {
   background-color: var(--color-primary);
   min-height: 100vh;
@@ -6,4 +11,74 @@ nav {
 .hidden {
   height: 0;
   overflow: hidden;
+}
+
+.active {
+  background-color: var(--color-active);
+  border-radius: 2rem 0 0 2rem;
+  color: var(--color-text-secondary);
+  position: relative;
+}
+
+.active::before,
+.active::after {
+  content:'';
+  position: absolute;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  right: 0;
+}
+
+.active::before {
+  bottom: 100%;
+  box-shadow: 10px 10px var(--color-active);
+}
+
+.active::after {
+  top: 100%;
+  box-shadow: 10px -10px var(--color-active);
+  
+}
+
+li {
+  padding: 1rem;
+  margin-left: 2rem;
+  font-size: var(--font-size-600);
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+
+#add-category-btn {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: var(--font-size-400);
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+  border: none;
+}
+
+.category-form {
+  position: relative;
+  z-index: 5;
+}
+
+#category-input {
+  margin: 0 auto;
+  background-color: var(--color-secondary);
+  padding: 1rem;
+  border-radius: 15px;
+  display: block;
+  width: 90%;
+  text-align: center;
+}
+
+#submit-category {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--color-cta);
+  border: none;
 }
