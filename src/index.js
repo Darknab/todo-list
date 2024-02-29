@@ -6,10 +6,9 @@ import { displayTasks } from './content';
 import { getCategories } from './categories';
 import { format } from 'date-fns';
 
-const categories = getCategories();
+let categories = getCategories();
 
 displayCategories();
-displayTasks();
 
 const dialog = document.querySelector('dialog');
 
@@ -41,7 +40,7 @@ submitTask.addEventListener('click', (e) => {
   e.preventDefault();
   const task = createTask();
   saveTask(task);
-  displayCategories();
+  displayTasks();
   dialog.close();
 })
 
@@ -51,7 +50,7 @@ function createTask() {
   task.description = document.querySelector('#description').value;
   task.category = document.querySelector('#select-category').value;
   const date = document.querySelector('#due-date').value;
-  const formattedDate = format(new Date(date), 'dd/MM/yyyy');
+  const formattedDate = format(new Date(date), 'MM/dd/yyyy');
   task.dueDate = formattedDate;
   task.priority = document.querySelector('#priority').value;
   task.complete = false;
@@ -62,5 +61,18 @@ function saveTask(task) {
   categories[task.category].push(task);
   const updatedCategories = JSON.stringify(categories);
   localStorage.setItem('categories', updatedCategories);
+  displayCategories();
 }
 
+// Event listener to select the active category
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('category')) {
+    const categoriesList = document.querySelectorAll('.category');
+    categoriesList.forEach((element) => {
+      element.classList.remove('active');
+    })
+    e.target.classList.add('active');
+    displayTasks();
+  }
+})

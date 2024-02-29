@@ -79,25 +79,44 @@ function showMore() {
   })
 }
 
+// export function displayTasks() {
+//   document.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('category')) {
+//       refresh data
+//       categories = getCategories();
+//       tasks.textContent = '';
+//       const catName = e.target.textContent;
+//       const tasksList = categories[catName];
+//       if (tasksList.length === 0) {
+//         const empty = document.createElement('p');
+//         empty.classList.add('empty-list');
+//         empty.textContent = `no tasks yet in ${catName}!`;
+//         tasks.appendChild(empty);
+//       } else {
+//         tasksList.forEach(task => {
+//           addElement(task);
+//         });
+//       }
+//     }
+//   })
+//   showMore();
+// }
+
 export function displayTasks() {
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('category')) {
-      // refresh data
-      categories = getCategories();
-      tasks.textContent = '';
-      const catName = e.target.textContent;
-      const tasksList = categories[catName];
-      if (tasksList.length === 0) {
-        const empty = document.createElement('p');
-        empty.classList.add('empty-list');
-        empty.textContent = `no tasks yet in ${catName}!`;
-        tasks.appendChild(empty);
-      } else {
-        tasksList.forEach(task => {
-          addElement(task);
-        });
-      }
-    }
-  })
+  //refresh data
+  categories = getCategories();
+  tasks.textContent = '';
+  const catName = document.querySelector('.active').textContent;
+  const tasksList = categories[catName];
+  if (tasksList.length === 0) {
+    const empty = document.createElement('p');
+    empty.classList.add('empty-list');
+    empty.textContent = `no tasks yet in ${catName}!`;
+    tasks.appendChild(empty);
+  } else {
+    tasksList.forEach(task => {
+      addElement(task);
+    });
+  }
   showMore();
 }
