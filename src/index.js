@@ -76,3 +76,24 @@ document.addEventListener('click', (e) => {
     displayTasks();
   }
 })
+
+//Handle the delete button
+
+document.addEventListener('click', (e) => {
+  if(e.target.classList.contains('delete')) {
+    // find the right task in the right category and deletes it
+    const activeCategory = document.querySelector('.active').textContent;
+    const taskTitle = e.target.id.slice(4);
+    let task
+    categories[activeCategory].forEach((element) => {
+      if (element.title === taskTitle) {
+        task = element;
+      }
+    })
+    const index = categories[activeCategory].indexOf(task);
+    categories[activeCategory].splice(index, 1);
+    const updatedCategories = JSON.stringify(categories);
+    localStorage.setItem('categories', updatedCategories);
+    displayTasks();
+  }
+})

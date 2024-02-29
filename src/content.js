@@ -12,8 +12,6 @@ function createCheckBox(task) {
     box.textContent = String.fromCharCode(10004) + ' completed';
     box.disabled = true;
   } else box.textContent = 'Mark as complete';
-
-  // handleCheckBox(task);
   return box;
 }
 
@@ -23,12 +21,19 @@ function handleCheckBox(task) {
       task.complete = true;
       e.target.textContent = String.fromCharCode(10004) + ' completed';
       e.target.disabled = true;
-      e.target.parentNode.classList.add('complete')
-      console.log('disabled');
+      e.target.parentNode.classList.add('complete');
       const updatedCategories = JSON.stringify(categories);
       localStorage.setItem('categories', updatedCategories);
     }
   })
+}
+
+function createDeleteBtn(task) {
+  const btn = document.createElement('button');
+  btn.id = `del-${task.title}`;
+  btn.classList.add('delete');
+  btn.textContent = 'Delete';
+  return btn;
 }
 
 function addElement(task) {
@@ -47,12 +52,13 @@ function addElement(task) {
   more.role = 'link';
   taskDueDate.textContent = task.dueDate;
   const checkBox = createCheckBox(task);
+  const deleteBtn = createDeleteBtn(task);
 
   const taskDescription = document.createElement('p');
   taskDescription.classList.add('task-description', 'closed');
   taskDescription.textContent = task.description;
 
-  firstLine.append(checkBox, taskTitle, taskDueDate, more)
+  firstLine.append(checkBox, taskTitle, taskDueDate, more, deleteBtn);
   if (task.complete === true) {
     firstLine.classList.add('complete');
   }
@@ -78,29 +84,6 @@ function showMore() {
     }
   })
 }
-
-// export function displayTasks() {
-//   document.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('category')) {
-//       refresh data
-//       categories = getCategories();
-//       tasks.textContent = '';
-//       const catName = e.target.textContent;
-//       const tasksList = categories[catName];
-//       if (tasksList.length === 0) {
-//         const empty = document.createElement('p');
-//         empty.classList.add('empty-list');
-//         empty.textContent = `no tasks yet in ${catName}!`;
-//         tasks.appendChild(empty);
-//       } else {
-//         tasksList.forEach(task => {
-//           addElement(task);
-//         });
-//       }
-//     }
-//   })
-//   showMore();
-// }
 
 export function displayTasks() {
   //refresh data
