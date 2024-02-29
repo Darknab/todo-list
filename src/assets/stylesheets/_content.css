@@ -1,7 +1,10 @@
 .content {
+  /*
   background-image: url(/src/assets/images/yellow-tiles.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  */
+  background-color: var(--color-active);
   min-height: 100vh;
   padding: 2rem;
   color: var(--color-text-primary-light);
