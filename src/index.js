@@ -96,4 +96,9 @@ document.addEventListener('click', (e) => {
     localStorage.setItem('categories', updatedCategories);
     displayTasks();
   }
+});
+
+const closeDialog = document.querySelector('.close-dialog');
+closeDialog.addEventListener('click', ()=> {
+  dialog.close();
 })
