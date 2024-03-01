@@ -40,8 +40,4 @@
     --color-secondary: #71F79F;
     --color-active: #075356;
     --color-cta: #E0C227;
-    --color-shadow: rgba(74,74,74,0.3);
-
-    /* shadow */
-    --shadow: 5px 5px 40px 5px var(--color-shadow);
-}
+  }

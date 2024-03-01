@@ -1,0 +1,58 @@
+dialog {
+  margin: auto;
+  padding: 2rem 5rem;
+  text-align: start;
+  background-color: var(--color-task);
+  border: none;
+  box-shadow: 10px 10px 5px black;
+  position: relative;
+  color: var(--color-text-primary);
+
+  & h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  & form {
+    margin: 3rem;
+  }
+
+  & input,
+  & select,
+  & textarea {
+    padding: 1rem;
+    border-radius: 5px;
+    min-width: 60%;
+    background-color: var(--color-secondary);
+    font-family: inherit;
+  }
+
+  & .group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  & #submit-task {
+    width: 95%;
+    background-color: var(--color-cta);
+    font-size: var(--font-size-500);
+    margin-top: 1rem;
+  }
+
+  &::backdrop {
+    background-color: #000;
+    opacity: 0.4;
+  }
+
+  & .close-dialog {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size-700);
+    font-weight: 600;
+  }
+}
