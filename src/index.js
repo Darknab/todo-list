@@ -69,11 +69,13 @@ function saveTask(task) {
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('category')) {
     const categoriesList = document.querySelectorAll('.category');
-    categoriesList.forEach((element) => {
-      element.classList.remove('active');
+    document.startViewTransition(() => {
+      categoriesList.forEach((element) => {
+        element.classList.remove('active');
+      })
+      e.target.classList.add('active');
+      displayTasks();
     })
-    e.target.classList.add('active');
-    displayTasks();
   }
 })
 
@@ -102,3 +104,21 @@ const closeDialog = document.querySelector('.close-dialog');
 closeDialog.addEventListener('click', ()=> {
   dialog.close();
 })
+
+// Show more event listener
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('show-more')) {
+    //select the task-element div related to the button
+    const task = e.target.parentNode.parentNode;
+    const description = task.querySelector('.task-description');
+    description.classList.toggle('closed');
+    toggleButtonText(e.target);
+  }
+})
+
+function toggleButtonText(target) {
+  if (target.childNodes[0].classList.contains('fa-caret-down')) {
+    target.innerHTML = '<i class="fa-solid fa-caret-up"></i>';
+  } else target.innerHTML = '<i class="fa-solid fa-caret-down"></i>';
+}
