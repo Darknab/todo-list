@@ -57,6 +57,11 @@
   height: 3rem;
   margin-left: auto;
   margin-right: 5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+#add-task:hover {
+  transform: scale(1.2);
 }
 
 .delete,

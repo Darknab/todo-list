@@ -41,11 +41,6 @@ dialog {
     margin-top: 1rem;
   }
 
-  &::backdrop {
-    background-color: #000;
-    opacity: 0.4;
-  }
-
   & .close-dialog {
     position: absolute;
     top: 2rem;
@@ -55,4 +50,44 @@ dialog {
     font-size: var(--font-size-700);
     font-weight: 600;
   }
+}
+
+/* Animation */
+
+dialog[open] {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+dialog {
+  animation-name: open-modal;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: all 0.5s ease-in-out allow-discrete; 
+
+}
+
+@keyframes open-modal {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+dialog::backdrop {
+  transition: all 0.5s ease-in-out;
+}
+
+dialog[open]::backdrop {
+  background-color: black;
+  opacity: 0.3;
 }
