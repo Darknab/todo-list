@@ -40,4 +40,9 @@
     --color-secondary: #71F79F;
     --color-active: #075356;
     --color-cta: #E0C227;
+    --color-high-priority:#ea580c;
+    --color-important:#eab308;
+    --color-less-important:#0ea5e9;
+    --color-defer:#d946ef;
+    --color-complete:#64748b;
   }

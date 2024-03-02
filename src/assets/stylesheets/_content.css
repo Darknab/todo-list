@@ -15,21 +15,20 @@
   background-color: var(--color-secondary);
   width: 80%;
   margin: 5rem auto;
-  padding: 1rem;
   border-radius: 10px;
   box-shadow: var(--shadow);
-  opacity: 0.9;
-
+  color: var(--color-text-primary);
 }
 
 .task-element {
-  padding: 1rem;
+  padding: 2rem;
   color: var(--color-text-primary);
   text-align: start;
 }
 
 .first-line {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr 3fr 1fr;
   justify-content: space-between;
 }
 
@@ -42,6 +41,8 @@
   max-height: 50px;
   transition: max-height 0.5s ease;
   overflow: hidden;
+  text-align: center;
+  margin-top: var(--space-400);
 }
 
 .closed {
@@ -60,5 +61,42 @@
   min-width: 3rem;
   margin-left: auto;
   margin-right: 5rem;
-  
+}
+
+.delete,
+.more  {
+  font-size: var(--font-size-600);
+  background-color: transparent;
+  border: none;
+}
+
+.fa-solid {
+  pointer-events: none;
+}
+
+.check {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.hight-priority {
+  background-color: var(--color-high-priority);
+}
+
+.important {
+  background-color: var(--color-important);
+}
+
+.less-important {
+  background-color: var(--color-less-important);
+}
+
+.defer {
+  background-color: var(--color-defer);
+}
+
+.task-complete {
+  background-color: var(--color-complete);
 }
