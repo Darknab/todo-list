@@ -44,24 +44,13 @@ addBtn.addEventListener('click', () => {
 export function displayCategories() {
   // Delete all previous content in case of a refresh and retrieve a fresh version on categories
   // but keeping the active one...active
-  const activeCategory = checkActiveCategory();
+  const activeCategory = document.querySelector('.active');
   categoriesList.innerHTML = '';
   categories = getCategories();
   for (const category in categories) {
     displayElement(category);
   }
   restoreActive(activeCategory);
-}
-
-function checkActiveCategory() {
-  const list = document.querySelectorAll('.category');
-  let activeElement;
-  list.forEach((element) => {
-    if (element.classList.contains('active')) {
-      activeElement = element
-    }
-  })
-  return activeElement;
 }
 
 function restoreActive(activeCategory) {
