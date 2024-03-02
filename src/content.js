@@ -76,7 +76,7 @@ function colorize(task, element) {
   } else {
     switch(task.priority) {
       case 'high-priority':
-        element.classList.add('hight-priority');
+        element.classList.add('high-priority');
         break;
       case 'important':
         element.classList.add('important');
@@ -108,5 +108,3 @@ export function displayTasks() {
     });
   }
 }
-
-console.log('update bundle please!');
