@@ -83,7 +83,7 @@
   font-weight: 600;
 }
 
-.hight-priority {
+.high-priority {
   background-color: var(--color-high-priority);
 }
 
@@ -101,4 +101,11 @@
 
 .task-complete {
   background-color: var(--color-complete);
+}
+
+.priorities > span {
+  margin-left: var(--space-600);
+  padding: var(--space-400);
+  color: var(--color-text-primary);
+  border-radius: 10px;
 }
