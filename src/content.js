@@ -17,10 +17,11 @@ function createCheckBox(task) {
 
 function handleCheckBox(task) {
   document.addEventListener('click', (e) => {
-    if (e.target.id === task.title) {
+    if (e.target.id === task.title && e.target.classList.contains('check')) {
       task.complete = true;
       e.target.textContent = String.fromCharCode(10004) + ' completed';
       e.target.disabled = true;
+      e.target.parentNode.classList.add('complete');
       const element = e.target.parentNode.parentNode;
       colorize(task, element);
       const updatedCategories = JSON.stringify(categories);
@@ -48,7 +49,7 @@ function addElement(task) {
   const taskDueDate = document.createElement('span');
   taskDueDate.classList.add('task-date');
   const more = document.createElement('button');
-  more.classList.add('more');
+  more.classList.add('show-more');
   more.innerHTML = '<i class="fa-solid fa-caret-down"></i>';
   more.role = 'link';
   taskDueDate.textContent = task.dueDate;
@@ -90,24 +91,6 @@ function colorize(task, element) {
   }
 }
 
-function toggleButtonText(target) {
-  if (target.childNodes[0].classList.contains('fa-caret-down')) {
-    target.innerHTML = '<i class="fa-solid fa-caret-up"></i>';
-  } else target.innerHTML = '<i class="fa-solid fa-caret-down"></i>';
-}
-
-function showMore() {
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('more')) {
-      //select the task-element div related to the button
-      const task = e.target.parentNode.parentNode;
-      const description = task.querySelector('.task-description');
-      description.classList.toggle('closed');
-      toggleButtonText(e.target);
-    }
-  })
-}
-
 export function displayTasks() {
   //refresh data
   categories = getCategories();
@@ -124,5 +107,4 @@ export function displayTasks() {
       addElement(task);
     });
   }
-  showMore();
 }
