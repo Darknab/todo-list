@@ -3,3 +3,7 @@ main {
   grid-template-columns: 200px 1fr;
   font-family: var(--font-family-primary);
 }
+
+::view-transition-group(root) {
+  animation-duration: 0.5s;
+}
