@@ -64,13 +64,15 @@
 }
 
 .delete,
-.more  {
+.show-more  {
   font-size: var(--font-size-600);
   background-color: transparent;
   border: none;
 }
 
-.fa-solid {
+.fa-caret-up,
+.fa-caret-down,
+.fa-trash-can {
   pointer-events: none;
 }
 
