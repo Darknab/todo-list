@@ -14,9 +14,9 @@ nav {
 }
 
 .active {
-  background-color: var(--color-active);
+  background-color: var(--color-main);
   border-radius: 2rem 0 0 2rem;
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
   position: relative;
 }
 
@@ -33,12 +33,12 @@ nav {
 
 .active::before {
   bottom: 100%;
-  box-shadow: 10px 10px var(--color-active);
+  box-shadow: 10px 10px var(--color-main);
 }
 
 .active::after {
   top: 100%;
-  box-shadow: 10px -10px var(--color-active);
+  box-shadow: 10px -10px var(--color-main);
   
 }
 
