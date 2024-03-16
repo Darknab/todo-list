@@ -1,7 +1,7 @@
 // Create categories in localStorage
 function createCategories() {
   const categories = {
-    'default': [],
+    'Default': [],
   }
   localStorage.setItem('categories', JSON.stringify(categories));
   return categories;
