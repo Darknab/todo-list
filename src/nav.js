@@ -62,6 +62,6 @@ function restoreActive(activeCategory) {
         element.classList.add('active');
       }
     })
-  }
+  } else document.querySelector('.category').classList.add('active');
 
 }
