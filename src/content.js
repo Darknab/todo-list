@@ -95,7 +95,13 @@ export function displayTasks() {
   //refresh data
   categories = getCategories();
   tasks.textContent = '';
-  const catName = document.querySelector('.active').textContent;
+  let active;
+  // Display tasks contained in the active category
+  // If no category is selected, display the first category (Default)
+  if (document.querySelector('.active')) {
+    active = document.querySelector('.active');
+  } else active = document.querySelector('.category');
+  const catName = active.textContent;
   const tasksList = categories[catName];
   if (tasksList.length === 0) {
     const empty = document.createElement('p');
