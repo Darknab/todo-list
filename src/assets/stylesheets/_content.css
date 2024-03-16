@@ -104,6 +104,10 @@
   background-color: var(--color-complete);
 }
 
+.priorities {
+  margin-bottom: 2rem;
+}
+
 .priorities > span {
   margin-left: var(--space-600);
   padding: var(--space-400);
@@ -111,7 +115,10 @@
   border-radius: 10px;
 }
 
-.credentials {
+.credentials {  
   position: absolute;
-  bottom: 1rem;
+  bottom: 0;
+  min-width: 90%;
+  margin-top: 2rem;
+  text-align: center;
 }
