@@ -81,7 +81,7 @@ function colorize(task, element) {
       case 'important':
         element.classList.add('important');
         break;
-      case 'less important':
+      case 'less-important':
         element.classList.add('less-important');
         break;
       case 'defer': 
