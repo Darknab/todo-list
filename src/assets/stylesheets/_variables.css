@@ -19,7 +19,7 @@
 
   /* text colors */
   --color-text-primary: #041925;
-  --color-text-primary-light: #ECF7FD;
+  --color-text-primary-light: #f5f5f4;
   --color-text-secondary: #E0C227 ;
 
     /* Spacing */
@@ -35,15 +35,15 @@
     --space-900: 4rem;
 
     /* colours */
-    --color-primary: #075356;
-    --color-main: #eceeec;
-    --color-task: #FBFEFB;
-    --color-secondary: #71F79F;
-    --color-active: #075356;
+    --color-primary: #e7e5e4;
+    --color-main: #292524;
+    --color-task: #e7e5e4;
+    --color-secondary: #16697A;
+    --color-active: #93c5fd;
     --color-cta: #E0C227;
-    --color-high-priority:#ea580c;
+    --color-high-priority:#dc2626;
     --color-important:#eab308;
     --color-less-important:#0ea5e9;
-    --color-defer:#d946ef;
-    --color-complete:#64748b;
+    --color-defer:#65a30d;
+    --color-complete:#9ca3af;
   }

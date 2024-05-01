@@ -24,6 +24,7 @@ dialog {
     border-radius: 5px;
     min-width: 60%;
     background-color: var(--color-secondary);
+    color: var(--color-text-primary-light);
     font-family: inherit;
   }
 
@@ -37,6 +38,7 @@ dialog {
   & #submit-task {
     width: 95%;
     background-color: var(--color-cta);
+    color: var(--color-text-primary);
     font-size: var(--font-size-500);
     margin-top: 1rem;
   }
